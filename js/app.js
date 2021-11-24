@@ -32,24 +32,21 @@ function shuffle(array) {
 
   return array;
 }
-//shuffleArray();
+
 function shuffleArray() {
   var afterShuffle = shuffle(beforeShuffle);
   for (const card of afterShuffle) {
     deck.appendChild(card);
   }
 }
-
-function openedCard(card){
-
-}
+shuffleArray();
 //if cards matched
 function cardsMatch() {
   cardsArray[0].classList.add("match");
   cardsArray[1].classList.add("match");
   cardsArray = [];
 
-  checkGameFinish();
+  
 }
 // if cards not matched
 function cardsNotMach() {
@@ -159,6 +156,7 @@ for (let i = 0; i < cards.length; i++) {
       ) {
         matchedCardNums++;
         cardsMatch();
+        setTimeout("checkGameFinish()",200);
       } else {
         setTimeout("cardsNotMach()", 600);
       }
